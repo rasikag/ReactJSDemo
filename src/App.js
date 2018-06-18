@@ -19,7 +19,7 @@ class App extends Component {
 
     this.setState({
       persons : [
-        {name: 'MaxInSetState', age: 29},
+        {name: 'TestSetState', age: 29},
         {name: 'JinnaInSetState', age: 30},
         {name: 'HithuInSetState', age: 28}
       ]
@@ -30,12 +30,14 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Welcome to React JS. Shall we play a game?</h1>
-        <button onClick={this.switchNameHandler}>Shall we play?</button>
+        <button onClick={this.switchNameHandler}>
+          Shall we play?
+        </button>
         <Person name={this.state.persons[0].name} 
                 age={this.state.persons[0].age} />
         <Person name={this.state.persons[1].name} 
                 age={this.state.persons[1].age} 
-                click={this.switchNameHandler}>
+                click={}>
           What will be hobby: Eating
         </Person>
         <Person name={this.state.persons[2].name} 
