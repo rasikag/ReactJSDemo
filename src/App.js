@@ -22,7 +22,8 @@ class App extends Component {
         {name: newName, age: 29},
         {name: 'JinnaInSetState', age: 30},
         {name: 'HithuInSetState', age: 28}
-      ]
+      ],
+      showPerson: false
     })
   }
 
@@ -38,7 +39,10 @@ class App extends Component {
   };
 
   togglePersonHandler = () => {
-
+    const doesShow = this.state.showPerson;
+    this.setState({
+      showPerson : !doesShow
+    });
   }
 
   render() {
@@ -59,7 +63,9 @@ class App extends Component {
         <button style={styles} onClick={this.togglePersonHandler}>
           Shall we play?
         </button>
-        <div>
+        { 
+          this.state.showPerson ?
+           <div>
           <Person name={this.state.persons[0].name} 
                   age={this.state.persons[0].age} 
                   changed={this.nameChangedHandler}/>
@@ -70,7 +76,8 @@ class App extends Component {
           </Person>
           <Person name={this.state.persons[2].name} 
                   age={this.state.persons[2].age} />
-        </div>
+        </div> : null
+        }
       </div>
     );
     //return React.createElement('div', null, 'h1', 'Hello from React app');
