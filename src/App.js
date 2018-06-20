@@ -37,6 +37,10 @@ class App extends Component {
     });
   };
 
+  togglePersonHandler = () => {
+
+  }
+
   render() {
 
     const styles = {
@@ -48,19 +52,25 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Welcome to React JS. Shall we play a game?</h1>
-        <button style={styles} onClick={() => this.switchNameHandler('Clicked from button')}>
+        {/*<button style={styles} onClick={() => this.switchNameHandler('Clicked from button')}>
           Shall we play?
         </button>
-        <Person name={this.state.persons[0].name} 
-                age={this.state.persons[0].age} 
-                changed={this.nameChangedHandler}/>
-        <Person name={this.state.persons[1].name} 
-                age={this.state.persons[1].age} 
-                click={this.switchNameHandler.bind(this, 'New name from P tag')}>
-          What will be hobby: Eating
-        </Person>
-        <Person name={this.state.persons[2].name} 
-                age={this.state.persons[2].age} />
+        */}
+        <button style={styles} onClick={this.togglePersonHandler}>
+          Shall we play?
+        </button>
+        <div>
+          <Person name={this.state.persons[0].name} 
+                  age={this.state.persons[0].age} 
+                  changed={this.nameChangedHandler}/>
+          <Person name={this.state.persons[1].name} 
+                  age={this.state.persons[1].age} 
+                  click={this.switchNameHandler.bind(this, 'New name from P tag')}>
+            What will be hobby: Eating
+          </Person>
+          <Person name={this.state.persons[2].name} 
+                  age={this.state.persons[2].age} />
+        </div>
       </div>
     );
     //return React.createElement('div', null, 'h1', 'Hello from React app');
