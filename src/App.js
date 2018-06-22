@@ -6,9 +6,9 @@ class App extends Component {
 
   state = {
     persons : [
-      {name: 'Max', age: 29},
-      {name: 'Jinna', age: 30},
-      {name: 'Hithu', age: 28}
+      {id: 1, name: 'Max', age: 29},
+      {id: 2, name: 'Jinna', age: 30},
+      {id: 3, name: 'Hithu', age: 28}
     ],
     otherState : 'this will not change'
   }
@@ -33,9 +33,9 @@ class App extends Component {
 
     this.setState({
       persons : [
-        { name: event.target.value, age: 30},
-        { name: 'J name 001', age: 30},
-        { name: 'J name 002', age: 30}
+        {name: event.target.value, age: 30},
+        {name: 'J name 001', age: 30},
+        {name: 'J name 002', age: 30}
       ]
     });
   };
@@ -88,7 +88,8 @@ class App extends Component {
           this.state.persons.map( (person, index) => { 
             return <Person name={person.name}
                            click={() => this.deletePersonHandler(index)}
-                           age={person.age} />
+                           age={person.age} 
+                           key={person.id}/>
           })
         }
         </div> 
