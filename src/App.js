@@ -112,10 +112,21 @@ class App extends Component {
 
       styles.backgroundColor = 'red';
     }
+
+    let classes = [];
+
+    if (this.state.persons.length <= 2) {
+      classes.push('red');
+    }
+
+    if (this.state.persons.length <= 1) {
+      classes.push('bold');
+    }
     
     return (
       <div className="App">
-        <h1>Welcome to React JS. Shall we play a game?</h1>
+        <h1>Welcome to React JS. </h1>
+        <p className={classes.join(' ')}>Shall we play a game?</p>
         {/*<button style={styles} onClick={() => this.switchNameHandler('Clicked from button')}>
           Shall we play?
         </button>
