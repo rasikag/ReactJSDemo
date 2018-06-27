@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Radium from 'radium';
+import Radium, {StyleRoot} from 'radium';
 import Person from './Person/Person';
 
 class App extends Component {
@@ -133,6 +133,7 @@ class App extends Component {
     }
     
     return (
+      <StyleRoot>
       <div className="App">
         <h1>Welcome to React JS. </h1>
         <p className={classes.join(' ')}>Shall we play a game?</p>
@@ -145,6 +146,7 @@ class App extends Component {
         </button>
         { persons }
       </div>
+      </StyleRoot>
     );
     //return React.createElement('div', null, 'h1', 'Hello from React app');
     //return React.createElement('div', null, 
