@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Radium, {StyleRoot} from 'radium';
+//import Radium, {StyleRoot} from 'radium';
 import Person from './Person/Person';
 
 class App extends Component {
@@ -79,12 +79,13 @@ class App extends Component {
       font: 'inherit',
       boarder: '1px solid blue',
       padding: '8px',
-      cursor: 'pointer',
-      ':hover': {
-        backgroundColor: 'lightgreen',
-        color: 'black'
-      }
+      cursor: 'pointer'
     }
+
+    // ':hover': {
+    //   backgroundColor: 'lightgreen',
+    //   color: 'black'
+    // }
 
     let persons = null;
 
@@ -116,10 +117,10 @@ class App extends Component {
       );
 
       styles.backgroundColor = 'red';
-      styles[':hover'] = {
-        backgroundColor: 'salmon',
-        color: 'black'
-      }
+      // styles[':hover'] = {
+      //   backgroundColor: 'salmon',
+      //   color: 'black'
+      // }
     }
 
     let classes = [];
@@ -133,7 +134,7 @@ class App extends Component {
     }
     
     return (
-      <StyleRoot>
+      // <StyleRoot>
       <div className="App">
         <h1>Welcome to React JS. </h1>
         <p className={classes.join(' ')}>Shall we play a game?</p>
@@ -146,7 +147,7 @@ class App extends Component {
         </button>
         { persons }
       </div>
-      </StyleRoot>
+      // </StyleRoot>
     );
     //return React.createElement('div', null, 'h1', 'Hello from React app');
     //return React.createElement('div', null, 
@@ -156,4 +157,5 @@ class App extends Component {
   }
 }
 
-export default Radium(App);
+//export default Radium(App);
+export default App;
