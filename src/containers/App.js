@@ -48,7 +48,8 @@ class App extends Component {
   };
 
   render() {
-
+    // how to access the props in stateful component
+    //const accessProps = this.props.appTitle;
     let persons = null;
 
     if (this.state.showPerson) {
