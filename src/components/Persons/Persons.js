@@ -3,6 +3,13 @@ import Person from './Person/Person';
 
 class Persons extends Component {
 
+        shouldComponentUpdate(nextProps, nextStatus) {
+                //return true;
+                return nextProps.persons !== this.props.persons || 
+                        nextProps.changed !== this.props.changed ||
+                        nextProps.clicked !== this.props.clicked;
+        }
+
         render () {
                 return this.props.persons.map( (person, index) => {            
                         return <Person 

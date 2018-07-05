@@ -47,6 +47,10 @@ class App extends Component {
     });
   };
 
+  shouldComponentUpdate(nextProps, nextState) {
+    return true;
+  }
+
   render() {
     // how to access the props in stateful component
     //const accessProps = this.props.appTitle;
@@ -61,6 +65,7 @@ class App extends Component {
 
     return (
       <div className={classes.App}>
+        <button onClick={ () => { this.setState({showPerson:true})}}>Show Person</button>
         <Cockpit 
           showPerson ={this.state.showPerson} 
           persons = {this.state.persons}
