@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import classes from './App.css';
 import Persons from '../components/Persons/Persons';
 import Cockpit from '../components/Cockpit/Cockpit';
 // import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
 
-class App extends Component {
+class App extends PureComponent {
 
   state = {
     persons : [
@@ -47,9 +47,10 @@ class App extends Component {
     });
   };
 
-  shouldComponentUpdate(nextProps, nextState) {
-    return true;
-  }
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   return nextState.persons !== this.state.persons ||
+  //           nextState.showPerson !== this.state.showPerson;
+  // }
 
   render() {
     // how to access the props in stateful component
